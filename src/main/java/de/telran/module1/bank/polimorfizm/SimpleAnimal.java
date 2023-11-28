@@ -1,4 +1,4 @@
-package de.telran.polimorfizm;
+package de.telran.module1.bank.polimorfizm;
 
 public class SimpleAnimal {
     public static void main(String[] args) {

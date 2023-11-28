@@ -1,4 +1,4 @@
-package de.telran.october15.bank.bank;
+package de.telran.module1.bank;
 
 public class CardAccount {
 }
