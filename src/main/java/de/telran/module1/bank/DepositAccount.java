@@ -1,6 +1,4 @@
-package de.telran.october15.bank.bank;
-
-import java.util.Date;
+package de.telran.module1.bank;
 
 public  class DepositAccount extends ClientAccount{
     private double maxDeposit;

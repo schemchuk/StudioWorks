@@ -1,4 +1,4 @@
-package de.telran.polimorfizm;
+package de.telran.module1.bank.polimorfizm;
 
 public class Dog extends Animal{
     @Override

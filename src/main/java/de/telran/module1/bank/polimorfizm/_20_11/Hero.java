@@ -1,4 +1,4 @@
-package de.telran.polimorfizm._20_11;
+package de.telran.module1.bank.polimorfizm._20_11;
 
 abstract public class Hero {
     String heroName;
