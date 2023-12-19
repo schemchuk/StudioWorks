@@ -31,9 +31,12 @@ public class SimpleManyFunction {
 
         int3 =  (dog, call) ->  {
                int price =  dog.getAge() * 10;
-            System.out.println(call + "can sell " + dog.getName() + " of " + price + "euro");
+            System.out.println(call + " can sell " + dog.getName() + " of " + price + "euro");
         };
         int3.printColl(dog1, "Havrusha ");
+
+        sendEmail(dog1, "Anton", int3);
+        sendEmail(dog1,"Fas", int2);
     }
 
 
@@ -62,6 +65,9 @@ public class SimpleManyFunction {
         void  printColl(Dog dog,String call);
     }
 
-
+   static void  sendEmail(Dog dog , String message, MyFuncInterface body) {
+        System.out.println("We send of post mail: ");
+        body.printColl(dog, message);
+    }
   }
 
