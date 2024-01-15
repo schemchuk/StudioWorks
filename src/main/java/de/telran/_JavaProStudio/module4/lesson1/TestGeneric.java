@@ -10,3 +10,5 @@ public class TestGeneric {
         String text = list.get(0) + " into a restaraunt";
     }
 }
+
+
