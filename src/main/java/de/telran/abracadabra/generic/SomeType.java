@@ -1,8 +1,7 @@
 package de.telran.abracadabra.generic;
 
-import de.telran.collection.Collection;
+import de.telran.abracadabra.collection.Collection;
 
-import java.util.Arrays;
 import java.util.List;
 
 public class SomeType<T> {

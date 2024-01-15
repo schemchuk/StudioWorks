@@ -1,4 +1,4 @@
-package de.telran.collection;
+package de.telran.abracadabra.collection;
 
 public class ArrayList {
 
