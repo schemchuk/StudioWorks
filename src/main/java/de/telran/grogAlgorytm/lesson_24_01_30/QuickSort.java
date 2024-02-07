@@ -11,21 +11,21 @@ public class QuickSort {
         }
     }
 
-    public static void quickSort(int[] arr, int low, int high) {
-        if (low < high) {
+    public static void quickSort(int[] arr, int low, int righ) {
+        if (low < righ) {
             // Находим опорный элемент, так чтобы элементы меньше опорного были слева, а больше - справа
-            int pivotIndex = partition(arr, low, high);
+            int pivotIndex = partition(arr, low, righ);
 
             // Рекурсивно сортируем левую и правую части относительно опорного элемента
             quickSort(arr, low, pivotIndex - 1);
-            quickSort(arr, pivotIndex + 1, high);
+            quickSort(arr, pivotIndex + 1, righ);
         }
     }
 
-    public static int partition(int[] arr, int low, int high) {
+    public static int partition(int[] arr, int low, int righ) {
         int pivot = arr[low];
         int i = low + 1;
-        int j = high;
+        int j = righ;
 
         while (i <= j) {
             // Поиск элемента, большего чем опорный, слева
