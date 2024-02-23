@@ -1,4 +1,4 @@
-package de.telran.abracadabra;
+package de.telran.abracadabra.collection;
 
 import java.util.ArrayList;
 import java.util.Arrays;
