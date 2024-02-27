@@ -1,5 +1,6 @@
-package de.telran.sammary.lesson_24_02_23.builders;
+package de.telran.sammary.lesson_24_02_24.cars.car;
 
+import de.telran.sammary.lesson_24_02_24.cars.components.*;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -8,7 +9,7 @@ public class Car {
     private final CarType carType;
     private final Engine engine;
     private final Transmission transmission;
-    private final int seats;
+    private  int seats;
     private final TripComputer tripComputer;
     private final GPSNavigator gpsNavigator;
     @Setter
@@ -23,4 +24,16 @@ public class Car {
         this.gpsNavigator = gpsNavigator;
     }
 
+    @Override
+    public String toString() {
+        return "Car{" +
+                "carType=" + carType +
+                ", engine=" + engine +
+                ", transmission=" + transmission +
+                ", seats=" + seats +
+                ", tripComputer=" + tripComputer +
+                ", gpsNavigator=" + gpsNavigator +
+                ", fuel=" + fuel +
+                '}';
+    }
 }

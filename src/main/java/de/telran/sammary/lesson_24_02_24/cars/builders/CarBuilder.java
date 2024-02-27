@@ -1,8 +1,10 @@
-package de.telran.sammary.lesson_24_02_23.builders;
+package de.telran.sammary.lesson_24_02_24.cars.builders;
 
-import de.telran._JavaProStudio.module3.lesson2.practic.Car;
+import de.telran.sammary.lesson_24_02_24.cars.car.Car;
+import de.telran.sammary.lesson_24_02_24.cars.car.CarType;
+import de.telran.sammary.lesson_24_02_24.cars.components.*;
 
-public class CarBuilder implements Builder {
+public class CarBuilder implements Builder{
     private CarType carType;
     private Engine engine;
     private Transmission transmission;
