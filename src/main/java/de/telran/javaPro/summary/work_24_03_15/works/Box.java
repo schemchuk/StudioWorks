@@ -3,7 +3,7 @@ package de.telran.javaPro.summary.work_24_03_15.works;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
-public class Box implements  Iterable<String>{
+public class Box implements Iterable<String> {
 //    2. Имеется класс Box
 //public class Box {
 //    String itemA;
@@ -16,23 +16,13 @@ public class Box implements  Iterable<String>{
     String itemB;
     String itemC;
 
+
     public Box(String itemA, String itemB, String itemC) {
         this.itemA = itemA;
         this.itemB = itemB;
         this.itemC = itemC;
     }
 
-    public String getItemA() {
-        return itemA;
-    }
-
-    public String getItemB() {
-        return itemB;
-    }
-
-    public String getItemC() {
-        return itemC;
-    }
 
     @Override
     public String toString() {
@@ -45,37 +35,37 @@ public class Box implements  Iterable<String>{
 
     @Override
     public Iterator<String> iterator() {
-
-        return new Iterator<String>() {
-            @Override
-            public boolean hasNext() {
-                int currentIndex = 0;
-                if (! hasNext()){
-                    throw new NoSuchElementException("ffgghh");
-
-                }
-
-                return false;
-            }
-
-            @Override
-            public String next() {
-                int currentIndex = 0;
-                if (!hasNext())
-                    throw new NoSuchElementException("jjklkkjjjjjjjj");
-                if (currentIndex == 0) {
-                    return itemA;
-                } if (currentIndex == 1) {
-                    return itemB;
-                } if (currentIndex == 2) {
-                    return itemC;
-                }
-                return null;
-            }
-
-            {
-
-            }
-        };
+        return new BoxIterator();
     }
-}
+
+    private class BoxIterator implements Iterator<String> {
+        private int currentIndex = 0;
+
+        @Override
+        public boolean hasNext() {
+            return currentIndex < 3;
+        }
+
+        @Override
+        public String next() {
+            if (!hasNext()) {
+                throw new NoSuchElementException("No such element");
+            }
+                String nextItem = null;
+                switch (currentIndex) {
+                    case 0:
+                        nextItem = itemA;
+                        break;
+                    case 1:
+                        nextItem = itemB;
+                        break;
+                    case 2:
+                        nextItem = itemC;
+                        break;
+                }
+                currentIndex++;
+                return nextItem;
+            }
+        }
+    }
+
