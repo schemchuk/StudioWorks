@@ -1,7 +1,6 @@
 package de.telran.stanislavsPacage.lesson9.mixComrare;
 
-import java.util.Set;
-import java.util.TreeSet;
+import java.util.*;
 
 public class CatCollektionExample {
     public static void main(String[] args) {
@@ -14,5 +13,17 @@ public class CatCollektionExample {
         cats.add(new Cat("Dexter",4,"color red"));
         cats.add(new Cat("Busik",3,"color tiger"));
         System.out.println(cats);
-    }
-}
+
+        List<Cat> catList = new ArrayList<>();
+        catList.add(new Cat("Murzik",2,"color red"));
+        catList.add(new Cat("Barsik",3,"color grey"));
+        catList.add(new Cat("Dexter",4,"color red"));
+        catList.add(new Cat("Busik",3,"color tiger"));
+        System.out.println(catList);
+
+      Collections.sort(catList,comparator);
+
+        System.out.println(catList);
+                
+            }
+        };
