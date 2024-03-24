@@ -57,9 +57,9 @@ public class SimpleBook {
         //________________________________________________________________________
 
 //        AuthorSearchCriteria criteria = new AuthorSearchCriteria("Goethes");
-//        de.telran.extraHomeWorke.collection.extra15.Book book7 = new de.telran.extraHomeWorke.collection.extra15.Book(1,"Faust", "Goethes");
-//        de.telran.extraHomeWorke.collection.extra15.Book book8 = new de.telran.extraHomeWorke.collection.extra15.Book(1,"Egmont", "Goethes");
-//        de.telran.extraHomeWorke.collection.extra15.Book book9 = new de.telran.extraHomeWorke.collection.extra15.Book(1,"Kateryna", "Shewchenko");
+//        de.telran.extraHomeWorke.collection.extra15.emptity.Book book7 = new de.telran.extraHomeWorke.collection.extra15.emptity.Book(1,"Faust", "Goethes");
+//        de.telran.extraHomeWorke.collection.extra15.emptity.Book book8 = new de.telran.extraHomeWorke.collection.extra15.emptity.Book(1,"Egmont", "Goethes");
+//        de.telran.extraHomeWorke.collection.extra15.emptity.Book book9 = new de.telran.extraHomeWorke.collection.extra15.emptity.Book(1,"Kateryna", "Shewchenko");
 //
 //        System.out.println("Book 7 match: " + criteria.match(book7));
 //        System.out.println("Book 8 match: " + criteria.match(book8));

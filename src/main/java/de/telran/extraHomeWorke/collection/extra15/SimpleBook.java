@@ -1,5 +1,9 @@
 package de.telran.extraHomeWorke.collection.extra15;
 
+import de.telran.extraHomeWorke.collection.extra15.criteriesToSearch.AuthorSearchCriteria;
+import de.telran.extraHomeWorke.collection.extra15.emptity.Book;
+import de.telran.extraHomeWorke.collection.extra15.implementation.BookDatabaseImpl;
+
 public class SimpleBook {
     public static void main(String[] args) {
         BookDatabaseImpl database = new BookDatabaseImpl();
@@ -55,17 +59,25 @@ public class SimpleBook {
 //        database.deleteByAuthor("Author2");
 //        System.out.println("Список книг после удаления: " + database);
 
-        System.out.println("Список книг до удаления: " + database);
+//        System.out.println("Список книг до удаления: " + database);
+//
+ //       database.deleteByTitle("Title2");
+//        System.out.println("Список книг после удаления: " + database);
 
-        database.deleteByTitle("Title2");
-        System.out.println("Список книг после удаления: " + database);
+        AuthorSearchCriteria searchCriteria = new AuthorSearchCriteria("Goethes");
+        System.out.println("Книга автора Goethes " + searchCriteria.match(book8));
+
+        //database.deleteByAuthor("Author1");
+        System.out.println("В базе находится " + database.countAllBooks() + " книг");
+        AuthorSearchCriteria searchCriteria1 = new AuthorSearchCriteria("Author8");
+        System.out.println("Книга автора Author8 " + searchCriteria1.match(book1));
 
 
 
 
 
 
-//System.out.println("Book 1 matches criteria 1: " + criteria1.match(new de.telran.extraHomeWorke.collection.extra15.Book(1, "1984", "George Orwell"))); // true
+//System.out.println("Book 1 matches criteria 1: " + criteria1.match(new de.telran.extraHomeWorke.collection.extra15.emptity.Book(1, "1984", "George Orwell"))); // true
 ////        System.out.println("Book 2 matches criteria 2: " + criteria2.match(book8)); // true
 
     }

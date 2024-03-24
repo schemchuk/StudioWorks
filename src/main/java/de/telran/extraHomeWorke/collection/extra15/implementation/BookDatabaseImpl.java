@@ -1,4 +1,7 @@
-package de.telran.extraHomeWorke.collection.extra15;
+package de.telran.extraHomeWorke.collection.extra15.implementation;
+
+import de.telran.extraHomeWorke.collection.extra15.emptity.Book;
+import de.telran.extraHomeWorke.collection.extra15.interfaces.BookDatabase;
 
 import java.util.ArrayList;
 import java.util.Iterator;
