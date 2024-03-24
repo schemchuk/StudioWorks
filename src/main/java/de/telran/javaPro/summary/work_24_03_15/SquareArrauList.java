@@ -1,4 +1,4 @@
-package de.telran.javaPro.summary;
+package de.telran.javaPro.summary.work_24_03_15;
 import java.util.Arrays;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
