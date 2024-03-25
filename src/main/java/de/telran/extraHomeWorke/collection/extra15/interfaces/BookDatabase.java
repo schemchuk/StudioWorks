@@ -3,7 +3,9 @@ package de.telran.extraHomeWorke.collection.extra15.interfaces;
 import de.telran.extraHomeWorke.collection.extra15.emptity.Book;
 
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
+import java.util.Set;
 
 public interface BookDatabase {
     Long save(Book book);
@@ -15,5 +17,10 @@ public interface BookDatabase {
     int countAllBooks();
     void deleteByAuthor(String author);
     void deleteByTitle(String title);
-
+    List<Book> find(SearchCriteria searchCriteria);
+    Set<String> findUniqueAuthors();
+    Set<String> findUniqueTitles();
+    Set<Book> findUniqueBooks();
+    boolean contains(Book book);
+    Map<String, List<Book>> getAuthorToBooksMap();
 }

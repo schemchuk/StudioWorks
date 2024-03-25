@@ -1,4 +1,4 @@
-package de.telran.extraHomeWorke.collection.extra15.criteriesToSearch;
+package de.telran.extraHomeWorke.collection.extra15.criteriesSearchCriterieImplemetation;
 
 import de.telran.extraHomeWorke.collection.extra15.emptity.Book;
 import de.telran.extraHomeWorke.collection.extra15.interfaces.SearchCriteria;

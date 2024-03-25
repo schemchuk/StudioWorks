@@ -1,12 +1,10 @@
-package de.telran.extraHomeWorke.collection.extra15.implementation;
+package de.telran.extraHomeWorke.collection.extra15.bookDatabaseImplementation;
 
 import de.telran.extraHomeWorke.collection.extra15.emptity.Book;
 import de.telran.extraHomeWorke.collection.extra15.interfaces.BookDatabase;
+import de.telran.extraHomeWorke.collection.extra15.interfaces.SearchCriteria;
 
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 
 public class BookDatabaseImpl implements BookDatabase {
     private ArrayList<Book> books;
@@ -111,10 +109,66 @@ public class BookDatabaseImpl implements BookDatabase {
         Iterator<Book> iterator = books.iterator();
         while (iterator.hasNext()) {
             Book book = iterator.next();
-            if (book.getTitle().equals(title)){
+            if (book.getTitle().equals(title)) {
                 iterator.remove();
             }
         }
+    }
+
+    @Override
+    public List<Book> find(SearchCriteria searchCriteria) {
+        List<Book> matchingBooks = new ArrayList<>();
+        for (Book book : books){
+            if (searchCriteria.match(book)) {
+                matchingBooks.add(book);
+            }
+        }
+        return matchingBooks;
+    }
+
+    @Override
+    public Set<String> findUniqueAuthors() {
+        Set<String> unigAuthors = new HashSet<>();
+        for (Book book : books) {
+            unigAuthors.add(book.getAuthor());
+        }
+        return unigAuthors;
+    }
+
+    @Override
+    public Set<String> findUniqueTitles() {
+        Set<String> uniqueTitles = new HashSet<>();
+        for (Book book : books){
+            uniqueTitles.add(book.getTitle());
+        }
+        return uniqueTitles;
+    }
+
+    @Override
+    public Set<Book> findUniqueBooks() {
+        return new HashSet<>(books);
+    }
+
+    @Override
+    public boolean contains(Book book) {
+
+        return books.contains(book);
+    }
+
+    @Override
+    public Map<String, List<Book>> getAuthorToBooksMap() {
+        Map<String, List<Book>> authorToBookMap = new HashMap<>();
+        for (Book book : books) {
+
+            String author = book.getAuthor();
+            List<Book> booksByAuthor = authorToBookMap.get(author);
+            if (booksByAuthor == null) {
+                booksByAuthor = new ArrayList<>();
+                authorToBookMap.put(author, booksByAuthor);
+            }
+          booksByAuthor.add(book);
+        }
+        return authorToBookMap;
     }
 
 
@@ -124,6 +178,10 @@ public class BookDatabaseImpl implements BookDatabase {
                 "books=" + books +
                 ", nextId=" + nextId +
                 '}';
+    }
+
+    public List<Book> getAllBooks() {
+        return new ArrayList<>(books);
     }
 }
 
