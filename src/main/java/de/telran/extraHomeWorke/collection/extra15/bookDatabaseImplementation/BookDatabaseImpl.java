@@ -171,6 +171,18 @@ public class BookDatabaseImpl implements BookDatabase {
         return authorToBookMap;
     }
 
+    @Override
+    public Map<String, Integer> getEachAuthorBookCount() {
+        Map<String,Integer> authorToBookCountMap = new HashMap<>();
+
+        for (Book book : books) {
+            String author  = book.getAuthor();
+            authorToBookCountMap.put(author,authorToBookCountMap.getOrDefault(author,0) + 1);
+
+        }
+        return authorToBookCountMap;
+    }
+
 
     @Override
     public String toString() {

@@ -127,5 +127,15 @@ public class SimpleBook {
             System.out.println();
         }
 
+        Map<String, Integer>  authorToBookCountMap = database.getEachAuthorBookCount();
+
+        for (Map.Entry<String, Integer> entry :authorToBookCountMap.entrySet()) {
+            String author = entry.getKey();
+            Integer count = entry.getValue();
+
+            System.out.println("Автор: " + author);
+            System.out.println("Количество книг: " + count);
+            System.out.println();
+        }
     }
 }
