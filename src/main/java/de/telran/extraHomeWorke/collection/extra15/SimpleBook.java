@@ -2,9 +2,8 @@ package de.telran.extraHomeWorke.collection.extra15;
 
 import de.telran.extraHomeWorke.collection.extra15.bookDatabaseImplementation.BookDatabaseImpl;
 import de.telran.extraHomeWorke.collection.extra15.emptity.Book;
-
-import java.util.List;
-import java.util.Map;
+import de.telran.extraHomeWorke.collection.extra15.uIActionImplementation.DeleteByIdUIAction;
+import de.telran.extraHomeWorke.collection.extra15.uIActionImplementation.SaveBookUIAction;
 
 public class SimpleBook {
     public static void main(String[] args) {
@@ -116,26 +115,44 @@ public class SimpleBook {
 //        System.out.println("Книга уже существует в базе данных: " + bookExist1);
 //        System.out.println("Книга уже существует в базе данных: " + bookExist2);
 
-        Map<String, List<Book>> authorToBooksMap = database.getAuthorToBooksMap();
+//        Map<String, List<Book>> authorToBooksMap = database.getAuthorToBooksMap();
+//
+//        for (Map.Entry<String, List<Book>> entry : authorToBooksMap.entrySet()){
+//            String author = entry.getKey();
+//            List<Book> books = entry.getValue();
+//
+//            System.out.println("Автор: " + author);
+//            System.out.println("Книги: " + books);
+//            System.out.println();
+//        }
+//
+//        Map<String, Integer>  authorToBookCountMap = database.getEachAuthorBookCount();
+//
+//        for (Map.Entry<String, Integer> entry :authorToBookCountMap.entrySet()) {
+//            String author = entry.getKey();
+//            Integer count = entry.getValue();
+//
+//            System.out.println("Автор: " + author);
+//            System.out.println("Количество книг: " + count);
+//            System.out.println();
+//            }
 
-        for (Map.Entry<String, List<Book>> entry : authorToBooksMap.entrySet()){
-            String author = entry.getKey();
-            List<Book> books = entry.getValue();
+        SaveBookUIAction saveBookUIAction = new SaveBookUIAction(database);
+        saveBookUIAction.execute();
+//        saveBookUIAction.execute();
+//
+//        FindByIdUIAction findById = new FindByIdUIAction(database);
+//
+//        findById.execute();
 
-            System.out.println("Автор: " + author);
-            System.out.println("Книги: " + books);
-            System.out.println();
-        }
+//        FindByAuthorUIAction findByAuthorUIAction = new FindByAuthorUIAction(database);
+//        findByAuthorUIAction.execute();
 
-        Map<String, Integer>  authorToBookCountMap = database.getEachAuthorBookCount();
+//        FindByTitleUIAction findByTitle = new FindByTitleUIAction(database);
+//        findByTitle.execute();
+//        findByTitle.execute();
 
-        for (Map.Entry<String, Integer> entry :authorToBookCountMap.entrySet()) {
-            String author = entry.getKey();
-            Integer count = entry.getValue();
-
-            System.out.println("Автор: " + author);
-            System.out.println("Количество книг: " + count);
-            System.out.println();
-        }
+        DeleteByIdUIAction deleteByIdUIAction = new DeleteByIdUIAction(database);
+        deleteByIdUIAction.execute();
     }
 }

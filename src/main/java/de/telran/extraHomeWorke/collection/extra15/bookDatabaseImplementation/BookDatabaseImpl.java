@@ -18,6 +18,48 @@ public class BookDatabaseImpl implements BookDatabase {
 
     }
 
+//    @Override
+//    public List<Book> findWithPaging(SearchCriteria searchCriteria, int pageNumber, int pageSize) {
+//
+//        List<Book> matchinBooks = new ArrayList<>();
+//
+//        List<Book> allMatchingBooks = find(searchCriteria);
+//        int startIndex = (pageNumber - 1) * pageSize;
+//        int endIndex = Math.min(startIndex + pageSize, allMatchingBooks.size());
+//
+//        if (startIndex >= allMatchingBooks.size()) {
+//            return matchinBooks;
+//        }
+//
+//        for (int i = startIndex; i < endIndex; i++){
+//            matchinBooks.add(allMatchingBooks.get(i));
+//        }
+//
+//        return matchinBooks;
+//    }
+
+    @Override
+    public List<Book> findWithPaging(SearchCriteria searchCriteria, int pageNumber, int pageSize) {
+        // Проверяем, что searchCriteria не равен null
+        if (searchCriteria == null) {
+            throw new IllegalArgumentException("Search criteria cannot be null");
+        }
+
+        // Устанавливаем параметры пейджинга
+//        int startIndex = (pageNumber - 1) * pageSize;
+//        int endIndex = startIndex + pageSize;
+        int fromIndex = (pageNumber - 1) * pageSize;
+        int toIndex = Math.min(fromIndex + pageSize, books.size());
+
+        // Получаем список всех книг, которые соответствуют критериям поиска
+//        List<Book> matchingBooks = find(searchCriteria);
+        List<Book> page = books.subList(fromIndex, toIndex);
+
+        // Обрезаем список книг с учетом пейджинга
+        return page;
+
+    }
+
     @Override
     public Long save(Book book) {
         book.setId(nextId);

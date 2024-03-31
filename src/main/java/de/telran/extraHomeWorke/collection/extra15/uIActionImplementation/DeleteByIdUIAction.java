@@ -7,29 +7,31 @@ import de.telran.extraHomeWorke.collection.extra15.interfaces.UIAction;
 import java.util.Optional;
 import java.util.Scanner;
 
-public class FindByIdUIAction implements UIAction {
-    private BookDatabase bookDatabase;
+public class DeleteByIdUIAction implements UIAction {
 
-    public FindByIdUIAction(BookDatabase bookDatabase) {
+    private BookDatabase bookDatabase;
+    public DeleteByIdUIAction(BookDatabase bookDatabase) {
         this.bookDatabase = bookDatabase;
     }
 
+
     @Override
     public void execute() {
-
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println("Введите ID книги:");
-        long id = Long.parseLong(scanner.nextLine());
+        System.out.println("Введите ID книги для удаления:");
+        Long id = Long.parseLong(scanner.nextLine());
 
         Optional<Book> bookOptional = bookDatabase.findById(id);
 
         if (bookOptional.isPresent()){
             Book book = bookOptional.get();
-            System.out.println("Найденная книга: " + book);
+            boolean deleted = bookDatabase.delete(id);
+            if (deleted){
+                System.out.println("Удалена книга: " + book);
+            }
         } else {
             System.out.println("Книга с ID " + id + " не найдена.");
         }
-        // Optional<>
     }
 }
