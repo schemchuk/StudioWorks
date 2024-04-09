@@ -4,4 +4,5 @@ import de.telran.extraHomeWorke.collection.extra15.emptity.Book;
 
 public interface SearchCriteria {
     boolean match(Book book);
+    //Comparator<Book> getComparator();
 }
