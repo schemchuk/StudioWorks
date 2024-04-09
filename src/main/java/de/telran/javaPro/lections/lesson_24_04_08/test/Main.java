@@ -1,5 +1,9 @@
 package de.telran.javaPro.lections.lesson_24_04_08.test;
 
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.List;
+
 public class Main {
     String[] array = new String[]{"One","Two"};
     //String[] array1 = Arrays.fill("Some");
@@ -69,5 +73,25 @@ public class Main {
 //                set.remove(n);
 //            }
 //        }
+
+//        String one1 = "One";
+//        String one2 = "One";
+//        String one3 = new String("One");
+//        String one4 = new String("One");
+//
+//        System.out.println(one1.equals(one2));
+//        System.out.println(one1 == one2);
+//        System.out.println(one2.equals(one3));
+//        System.out.println(one2 == one3);
+//        System.out.println(one3.equals(one4));
+//        System.out.println(one3 == one4);
+
+        List<Long> list = new ArrayList<>();
+        list.add(2l);
+        list.add(3l);
+        list.add(null);
+        list.sort(Comparator.nullsFirst(Comparator.naturalOrder()));
+        System.out.println(list);
+
     }
 }
