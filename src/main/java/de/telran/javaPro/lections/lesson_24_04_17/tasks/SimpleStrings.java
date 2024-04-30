@@ -1,4 +1,4 @@
-package de.telran.javaPro.lesson_24_04_17.tasks;
+package de.telran.javaPro.lections.lesson_24_04_17.tasks;
 
 import java.util.Arrays;
 import java.util.Comparator;

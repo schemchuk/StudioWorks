@@ -1,4 +1,4 @@
-package de.telran.javaPro.lesson_24_04_10;
+package de.telran.javaPro.lections.lesson_24_04_10;
 
 import java.util.Random;
 import java.util.function.*;

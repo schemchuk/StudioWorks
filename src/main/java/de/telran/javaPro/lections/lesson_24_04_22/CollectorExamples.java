@@ -1,6 +1,6 @@
 package de.telran.javaPro.lections.lesson_24_04_22;
 
-import de.telran.javaPro.lesson_24_04_17.tasks.employees.Employee;
+import de.telran.javaPro.lections.lesson_24_04_17.tasks.employees.Employee;
 
 import java.util.Arrays;
 import java.util.List;

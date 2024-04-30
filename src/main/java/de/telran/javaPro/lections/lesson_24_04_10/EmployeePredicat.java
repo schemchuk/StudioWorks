@@ -1,4 +1,4 @@
-package de.telran.javaPro.lesson_24_04_10;
+package de.telran.javaPro.lections.lesson_24_04_10;
 
 import de.telran.javaPro.lections.lesson_24_03_18.emploers.Employee;
 

@@ -1,4 +1,4 @@
-package de.telran.javaPro.practicWithAlex.practic_24_03_11;
+package de.telran.javaPro.practicWithAlex.lesson_24_03_11;
 
 import java.util.Arrays;
 import java.util.List;
